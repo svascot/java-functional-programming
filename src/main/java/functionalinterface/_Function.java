@@ -18,10 +18,10 @@ public class _Function {
         System.out.println(concatenatedResult);
     }
 
-    // Function takes 1 argument and produce 1 result;
+    // Function takes 1 argument and produce 1 result.
     static Function<Integer, Integer> multiplyByTen = number -> number *= 10;
 
-    // BiFunction takes two arguments and return one result;
+    // BiFunction takes two arguments and return one result.
     static BiFunction<String, Integer, String> sayHappyBirthday = (name, age) -> "Happy " + age + " Birthday " + name;
 
     static Function<Integer, Integer> incrementByOne = number -> ++number;
