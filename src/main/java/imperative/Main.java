@@ -1,23 +1,25 @@
 package main.java.imperative;
 
+import main.java.Person;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
-import static main.java.imperative.Main.Gender.FEMALE;
-import static main.java.imperative.Main.Gender.MALE;
+import static main.java.Person.Gender.FEMALE;
+import static main.java.Person.Gender.MALE;
 
 public class Main {
 
     public static void main(String[] args) {
 
         List<Person> people = List.of(
-                new Person("John", MALE),
-                new Person("Maria", FEMALE),
-                new Person("Aisha", FEMALE),
-                new Person("Alex", MALE),
-                new Person("Alice", FEMALE)
+                new Person("John", MALE, 20),
+                new Person("Maria", FEMALE, 25),
+                new Person("Aisha", FEMALE, 18),
+                new Person("Alex", MALE, 28),
+                new Person("Alice", FEMALE, 30)
         );
 
         // Imperative approach
@@ -53,35 +55,5 @@ public class Main {
                 .forEach(System.out::println);
 
 
-    }
-
-    static class Person {
-        private final String name;
-        private final Gender gender;
-
-        Person(String name, Gender gender) {
-            this.name = name;
-            this.gender = gender;
-        }
-
-        public String getName() {
-            return name;
-        }
-
-        public Gender getGender() {
-            return gender;
-        }
-
-        @Override
-        public String toString() {
-            return "Person{" +
-                    "name='" + name + '\'' +
-                    ", gender=" + gender +
-                    '}';
-        }
-    }
-
-    enum Gender {
-        MALE, FEMALE
     }
 }
